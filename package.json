@@ -1,0 +1,23 @@
+{
+  "name": "multiauth",
+  "version": "0.1.0",
+  "description": "An authentication middleware for React + Express applications with 11 OAuth providers and local email/password authentication.",
+  "license": "ISC",
+  "author": "Alex Honoré",
+  "type": "module",
+  "main": "./src/core/index.js",
+  "files": [
+    "src/",
+    "README.md"
+  ],
+  "keywords": ["authentication", "oauth", "express", "react", "jwt", "middleware"],
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.3.1"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  }
+}
