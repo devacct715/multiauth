@@ -34,9 +34,6 @@ export {
     NotionStrategy,
     SlackStrategy,
     SpotifyStrategy,
-    TwitchStrategy,
-    AuthProvider,
-    useAuth,
-    LoginButton
+    TwitchStrategy
 }; 
 
