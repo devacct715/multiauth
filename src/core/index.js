@@ -21,8 +21,8 @@ import { SpotifyStrategy } from "../strategies/spotify.js";
 import { TwitchStrategy } from "../strategies/twitch.js";
 
 // React SDK
-import {AuthProvider, useAuth} from "../react/AuthProvider.jsx";
-import { LoginButton } from "../react/LoginButton.jsx";
+import {AuthProvider, useAuth} from "../react/AuthProvider.js";
+import { LoginButton } from "../react/LoginButton.js";
 
 export {
     createRouter,
