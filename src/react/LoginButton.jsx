@@ -1,71 +1,61 @@
 import { useAuth } from './AuthProvider';
+import auth0 from './logos/auth0.png';
+import bitbucket from './logos/bitbucket.png';
+import discord from './logos/discord.png';
+import facebook from './logos/facebook.svg';
+import github from './logos/github.png';
+import gitlab from './logos/gitlab.png';
+import google from './logos/google.png'; 
+import notion from './logos/notion.png';
+import slack from './logos/slack.png';
+import spotify from './logos/spotify.svg';
+import twitch from './logos/twitch.svg';
 
 const providerBrands = {
     auth0: {
         label: 'Sign in with Auth0',
-        bgColor: 'black',
-        textColor: 'white',
-        borderColor: 'black',
+        logo: auth0, 
     }, 
     bitbucket: {
         label: 'Sign in with BitBucket',
-        bgColor: '#82B536',
-        textColor: 'black',
-        borderColor: '#82B536',
+        logo: bitbucket
     },
     discord: {
         label: 'Sign in with Discord',
-        bgColor: '#5865F2',
-        textColor: 'white',
-        borderColor: '#5865F2',
+        logo: discord
     },
     facebook: {
         label: 'Sign in with Facebook',
-        bgColor: '#1877F2',
-        textColor: 'white',
-        borderColor: '#1877F2',
+        logo: facebook
     },
     github: {
         label: 'Sign in with GitHub',
-        bgColor: '#0FBF3E',
-        textColor: 'white',
-        borderColor: '#0FBF3E',
+        logo: github
     },
     gitlab: {
         label: 'Sign in with GitLab',
-        bgColor: '#FC6D26',
-        textColor: 'white',
-        borderColor: '#FC6D26',
+        logo: gitlab
     },
     google: {
         label: 'Sign in with Google',
-        bgColor: 'white',
-        textColor: 'black',
-        borderColor: 'black',
+        logo: google
     },
     notion: {
         label: 'Sign in with Notion',
-        bgColor: 'black',
-        textColor: 'white',
-        borderColor: 'black',
+        logo: notion
     },
     slack: {
         label: 'Sign in with Slack',
-        bgColor: 'purple',
-        textColor: 'white',
-        borderColor: 'purple',
+        width: 'auto',
+        logo: slack
     },
     spotify: {
         label: 'Sign in with Spotify',
-        bgColor: '#1ED760',
-        textColor: 'white',
-        borderColor: '#1ED760',
+        logo: spotify
     },
     twitch: {
         label: 'Sign in with Twitch',
-        bgColor: '#9146FF',
-        textColor: 'white',
-        borderColor: '#9146FF',
+        logo: twitch
     }
 };
 
@@ -80,21 +70,18 @@ export function LoginButton({ provider, style, className }) {
     const buttonStyle = {
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
-        gap: '12px',
-        padding: '10px 24px',
-        fontSize: '14px',
-        fontWeight: '500',
-        color: brand.textColor,
-        backgroundColor: brand.bgColor,
-        border: `1px solid ${brand.borderColor}`,
-        borderRadius: '6px',
+        backgroundColor: 'white',
+        borderRadius: '8px',
+        padding: '10px',
         cursor: 'pointer',
-        width: '100%',
-        maxWidth: '320px',
-        height: '44px',
         ...style
-    };
+    }
+
+    const logoStyle = {
+        height: '24px',
+        width: brand.width ? brand.width : '24px',
+        marginRight: '8px'
+    }
 
     return (
         <button
@@ -102,6 +89,7 @@ export function LoginButton({ provider, style, className }) {
             className={className}
             style={buttonStyle}
         >
+            <img src={brand.logo} style={logoStyle} alt={provider} />
             <span>{brand.label}</span>
         </button>
     );
